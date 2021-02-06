@@ -1,0 +1,13 @@
+.food{
+    border: 1px solid red;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    margin: 20px;
+}
+#foods{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+}
