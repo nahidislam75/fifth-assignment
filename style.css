@@ -14,3 +14,16 @@
 #firstImg{
     width: 100%;
 }
+#ingradience img{
+    width: 100%;
+}
+.body-background{
+    background-color: aquamarine;
+}
+.first{
+    text-align: center;
+    padding: 30px;
+}
+.food{
+    background-color: beige;
+}

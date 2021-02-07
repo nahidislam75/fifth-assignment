@@ -12,9 +12,10 @@ const displayFood = meals=>{
         const foodDiv= document.createElement('div');
         foodDiv.className='food'
         const foodInfo=`
-        <div onclick="displayFoodDetail('${meal.strMeal}')">
+        <div onclick="displayFoodsDetails('${meal.strMeal}')">
+        <img id="firstImg" src="${meal.strMealThumb}">
             <h3>${meal.strMeal}</h>
-            <img id="firstImg" src="${meal.strMealThumb}">
+            
         </div>    
 
         `;
@@ -22,23 +23,31 @@ const displayFood = meals=>{
         foodsDiv.appendChild(foodDiv);
     });
 }
-
 }
-const displayFoodDetail=strMeal=>{
+const displayFoodsDetails=strMeal=>{
     const url =`https://www.themealdb.com/api/json/v1/1/search.php?s=${strMeal}`
     fetch(url)
     .then(res=>res.json())
-    .then(data=>console.log(data));
+    .then(data=>displayFoodsDetail(data));
 }
-// const randerFoodInfo=meals=>{
-//     const oneMeal=meals.meals;
-//     const onemenu=oneMeal[0];
-//     const foodDiv=document.getElementsByClassName('ingradience');
-//     foodDiv.innerHTML=`
-//         <img src="${onemenu.strMealThumb}">
-//         <h3>${onemenu.strMeal}</h3>
-//         <li>${onemenu.strIngredient1}</li>   
-//     `;
+const displayFoodsDetail = meals=>{
+    const foodsDiv= document.getElementById('ingradience');
+    const menu=meals.meals;
+    foodsDiv.innerHTML="";
+    menu.forEach(meal => {
+        const foodDiv= document.createElement('div');
+        foodDiv.className='food'
+        const foodInfo=`
+        <img src="${meal.strMealThumb}">
+         <h3>${meal.strMeal}</h3>
+         <li>${meal.strIngredient1}</li> 
+         <li>${meal.strIngredient2}</li> 
+         <li>${meal.strIngredient3}</li> 
+         <li>${meal.strIngredient4}</li> 
+         <li>${meal.strIngredient5}</li> 
 
-
-// }
+        `;
+        foodDiv.innerHTML= foodInfo;
+        foodsDiv.appendChild(foodDiv);
+    });
+}
