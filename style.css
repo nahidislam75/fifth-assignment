@@ -20,10 +20,24 @@
 .body-background{
     background-color: aquamarine;
 }
-.first{
+.first-div{
     text-align: center;
     padding: 30px;
 }
 .food{
     background-color: beige;
+}
+.list-item{
+    text-align: left;
+}
+.only-button{
+    background-color: lightblue;
+    height: 35px;
+    width: 70px;
+    border-radius: 10px;
+}
+#dish-catagory{
+    height: 37px;
+    width: 300px;
+    border-radius: 10px;
 }
