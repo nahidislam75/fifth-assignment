@@ -4,7 +4,7 @@ function lookForDish() {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${dishName}`)
         .then(res => res.json())
         .then(data => displayFood(data))
-        .catch(error=> window.alert('Can not find your food'))
+        .catch(error => window.alert('Can not find your food'))//for error hendling
     const displayFood = meals => {
         const foodsDiv = document.getElementById('foods');
         const menu = meals.meals;
@@ -26,7 +26,7 @@ function lookForDish() {
     }
 
 }
-
+//for display clicked food detail
 const displayFoodsDetails = strMeal => {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${strMeal}`
     fetch(url)
