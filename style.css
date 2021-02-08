@@ -14,9 +14,6 @@
 #firstImg{
     width: 100%;
 }
-#ingradience img{
-    width: 100%;
-}
 .body-background{
     background-color: aquamarine;
 }
@@ -40,4 +37,10 @@
     height: 37px;
     width: 300px;
     border-radius: 10px;
+}
+.top-ber{
+    background-color: whitesmoke;
+}
+.imageForIngredint{
+    width: 100%;
 }

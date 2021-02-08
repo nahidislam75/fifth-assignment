@@ -12,36 +12,36 @@ function lookForDish() {
         menu.forEach(meal => {
             const foodDiv = document.createElement('div');
             foodDiv.className = 'food'
-            const foodInfo = `
-        <div onclick="displayFoodsDetails('${meal.strMeal}')">
+            const foodName = `
+        <div onclick="lookForDishDetail('${meal.strMeal}')">
         <img id="firstImg" src="${meal.strMealThumb}">
             <h3>${meal.strMeal}</h>
             
         </div>    
 
         `;
-            foodDiv.innerHTML = foodInfo;
+            foodDiv.innerHTML = foodName;
             foodsDiv.appendChild(foodDiv);
         });
     }
 
 }
 //for display clicked food detail
-const displayFoodsDetails = strMeal => {
+const lookForDishDetail = strMeal => {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${strMeal}`
     fetch(url)
         .then(res => res.json())
         .then(data => displayFoodsDetail(data));
 }
 const displayFoodsDetail = meals => {
-    const foodsDiv = document.getElementById('ingradience');
+    const ingredintssDiv = document.getElementById('ingredints');
     const menu = meals.meals;
-    foodsDiv.innerHTML = "";
+    ingredintssDiv.innerHTML = "";
     menu.forEach(meal => {
-        const foodDiv = document.createElement('div');
-        foodDiv.className = 'food'
+        const ingredintsDiv = document.createElement('div');
+        ingredintsDiv.className = 'food'
         const foodInfo = `
-        <img src="${meal.strMealThumb}">
+        <img class="imageForIngredint" src="${meal.strMealThumb}">
          <h3>${meal.strMeal}</h3>
          <p>Ingredints</p>
          <ul class="list-item">
@@ -51,9 +51,13 @@ const displayFoodsDetail = meals => {
          <li>${meal.strIngredient4}</li> 
          <li>${meal.strIngredient5}</li> 
          <li>${meal.strIngredient6}</li> 
+         <li>${meal.strIngredient7}</li> 
+         <li>${meal.strIngredient8}</li> 
+         <li>${meal.strIngredient9}</li> 
+         <li>${meal.strIngredient10}</li> 
         </ul>
         `;
-        foodDiv.innerHTML = foodInfo;
-        foodsDiv.appendChild(foodDiv);
+        ingredintsDiv.innerHTML = foodInfo;
+        ingredintssDiv.appendChild(ingredintsDiv);
     });
 }
